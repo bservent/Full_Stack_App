@@ -16,7 +16,7 @@ app.use (methodOverride('_method'));
 app.use('/hikes', ctrl);
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('home');
 });
 
 
