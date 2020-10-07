@@ -3,12 +3,16 @@ const router = express.Router();
 
 const db = require('../models');
 
-router.get('/hikes', (req, res) => {
-    res.render('./hikes/index');
+router.get('/', (req, res) => {
+    res.render('hikes/index');
 });
 
-/* router.get('./hikes/new', (req, res) => {
-    res.render('new');
+router.get('/new', (req, res) => {
+    res.render('hikes/new');
+});
+
+/* router.post('/new', (req, res) => {
+    
 }); */
 
 module.exports = router;

@@ -13,12 +13,12 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use (methodOverride('_method'));
-app.use('/hikes', ctrl);
 
 app.get('/', (req, res) => {
     res.render('home');
 });
 
+app.use('/hikes', ctrl);
 
 app.get('*', (req, res) => {
     res.render('404');
