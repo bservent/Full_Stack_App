@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router;
+const router = express.Router();
 
-const db = require('..models');
+const db = require('../models');
 
-router.get('/hike', (req, res) {
+router.get('/', (req, res) => {
     res.render('index');
 });
 

@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 mongoose.connection.on('connected', () => {
-    console.log(`MongoDB connected to ${connectionString}`);
+    console.log(`MongoDB connected!`);
 });
 
 mongoose.connection.on('error', (err) => {
@@ -19,4 +19,4 @@ mongoose.connection.on('disconnected', () => {
     console.log('Mongoose disconnected');
 });
 
-module.exports = require('./hike');
+module.exports = require('./Hike');

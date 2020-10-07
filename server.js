@@ -1,17 +1,26 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const PORT = 3000;
-const hikeController = require('./controllers/hikeController');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const PORT = process.env.PORT || 3000;
+
+
+const ctrl = require('./controllers/hikeController');
 
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use (methodOverride('_method'));
+app.use('/hikes', ctrl);
 
 app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.use('/hikes', hikeController);
 
-app.use('*', (req, res) => {
+app.get('*', (req, res) => {
     res.render('404');
 });
 
