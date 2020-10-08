@@ -18,21 +18,6 @@ router.get('/new', (req, res) => {
     res.render('hikes/new');
 });
 
-router.post('/', (req, res) => {
-    const newHike = {
-        name: req.body.name,
-        location: req.body.location,
-        lengthInMiles: req.body.lengthInMiles,
-        difficulty: req.body.difficulty
-    };
-    db.Hike.create(req.body, (err, newHike) => {
-        if (err) {
-            console.log(err);
-        }
-        res.redirect('/hikes/:hikeId')
-    });
-});
-
 router.get('/:hikeId', (req, res) => {
     db.Hike.findById(req.params.hikeId, (err, foundHike) => {
         if (err) {
@@ -43,4 +28,14 @@ router.get('/:hikeId', (req, res) => {
         });
     });
 }); 
+
+router.post('/', (req, res) => {
+    db.Hike.create(req.body, (err, newHike) => {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect('/hikes');
+    });
+});
+
 module.exports = router;
