@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+</head>
+<body style = text-align:center;color:rgb(133,22,41);>
+        <h1>Information</h1>
+        <main>
+          <form action="/hikes/<%= hikes[i]._id %>" method="POST">
+            <div style= margin-top:20px;padding-right:37px>
+                Name:<p><%= hikes.name %></p>
+            </div>
+
+            <div style= margin-top:20px;padding-right:37px>
+                Location:<p><%= hikes.location %></p>
+            </div>
+  
+            <div style= margin-top:20px;padding-right:37px>
+                LengthInMiles:<p><%= hikes.lengthInMiles %> </p>
+            </div>
+
+            <div style= margin-top:20px;padding-right:37px>
+                Name:<p><%= hikes.difficulty %> </p>
+            </div>
+
+          </form>
+          <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
+            <input style=margin-top:20px; type="submit" value="Delete" />
+          </form>
+        </main>
+</body>
+    
+</html>
