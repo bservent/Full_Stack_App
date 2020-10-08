@@ -7,6 +7,15 @@
 </head>
 <body style = text-align:center;color:rgb(24,70,24);>
     <h1>Welcome to Hikes Around The World!</h1>
-
+    <ul>
+        <% for (let i = 0; i < hikes.length; i++) { %>
+            <li style="margin-bottom: 20px;">
+                <a href="/hikes/<%= hikes[i]._id %> ">
+                    <%= hikes[i].name %>
+                </a> 
+            </li>
+            <a href="/hikes/<%=i; %>/edit">Edit</a>
+       <% } %>
+    </ul>
 </body>
 </html>

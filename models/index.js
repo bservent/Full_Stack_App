@@ -19,4 +19,4 @@ mongoose.connection.on('disconnected', () => {
     console.log('Mongoose disconnected');
 });
 
-module.exports = require('./Hike');
+module.exports = {Hike: require('./Hike')};

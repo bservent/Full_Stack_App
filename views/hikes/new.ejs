@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a Hike</title>
+    <title>Add Hike</title>
 </head>
-<body style = text-align:center;color:rgb(117,27,42);>
+<body style = text-align:center;color:rgb(133,22,41);>
         <h1>ADD A HIKE!</h1>
+        <main>
+            <form action="/hikes" method="POST"></form>
+            <div style= margin-top:20px;padding-right:37px>
+                <label for="name">Hike Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div style= margin-top:20px;padding-right:21px>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location">
+            </div>
+            <div style= margin-top:20px;padding-right:50px>
+                <label for="LengthInMiles">LengthInMiles</label>
+                <input type="number" id="LengthInMiles" name="LengthInMiles">
+            </div>
+            <div style= margin-top:20px;padding-right:21px>
+                <label for="difficulty">Difficulty:</label>
+                <input type="text" id="difficulty" name="difficulty">
+            </div>
+            <button style=margin-top:20px; type="submit">Add Hike</button>
+        </main>
 </body>
+    
 </html>
