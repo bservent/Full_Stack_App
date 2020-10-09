@@ -24,17 +24,18 @@ router.get('/:hikeId', (req, res) => {
             console.log(err);
         }
         res.render('hikes/show', {
-            hikes: foundHike,
+        hike: foundHike
         });
     });
 }); 
 
 router.post('/', (req, res) => {
-    db.Hike.create(req.body, (err, newHike) => {
+    db.Hike.create(req.body, (err, newHike) => { 
         if (err) {
             console.log(err);
         }
-        res.redirect('/hikes');
+        console.log(newHike);
+        res.redirect('/hikes')
     });
 });
 

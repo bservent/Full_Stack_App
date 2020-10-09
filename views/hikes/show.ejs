@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information</title>
 </head>
-<body style = text-align:center;color:rgb(133,22,41);>
+<body style = "text-align:center;color:rgb(133,22,41);">
         <h1>Information</h1>
         <main>
-            <div style= margin-top:20px;padding-right:37px>
-                Name:<p><%= hikes.name: %></p>
+            <div style= "margin-top:20px;padding-right:37px">
+                Name:<p><%= hike.Name %></p>
             </div>
 
-            <div style= margin-top:20px;padding-right:37px>
-                Location:<p><%= hikes.location: %></p>
+            <div style= "margin-top:20px;padding-right:37px">
+                Location:<p><%= hike.Location %></p>
             </div>
   
-            <div style= margin-top:20px;padding-right:37px>
-                LengthInMiles:<p><%= hikes.lengthInMiles %> </p>
+            <div style= "margin-top:20px;padding-right:37px">
+                LengthInMiles:<p><%= hike.LengthInMiles %> </p>
             </div>
 
-            <div style= margin-top:20px;padding-right:37px>
-                Name:<p><%= hikes.difficulty %> </p>
+            <div style= "margin-top:20px;padding-right:37px">
+                Name:<p><%= hike.Difficulty %> </p>
             </div>
           <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
-            <input style=margin-top:20px; type="submit" value="Delete Hike" />
+            <input style="margin-top:20px;" type="submit" value="Delete Hike" />
           </form>
         </main>
 </body>
