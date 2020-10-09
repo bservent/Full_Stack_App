@@ -35,8 +35,28 @@ router.post('/', (req, res) => {
             console.log(err);
         }
         console.log(newHike);
-        res.redirect('/hikes')
+        res.redirect(`/hikes/${newHike._id}`)
     });
 });
 
+router.get('/:hikeId/edit', (req, res) => {
+    db.Hike.findById(req.params.hikeId, (err, foundHike) => {
+        if (err) {
+            console.log(err);
+        }
+        res.render('hikes/edit', {
+        hike: foundHike
+        });
+    });
+});
+
+router.delete('/:hikeId', (req, res) => {
+    db.Hike.findByIdAndDelete(req.params.hikeId, (err, deletedHike) => {
+        if (err) {
+            console.log(err);
+        }
+    });
+
+    res.redirect('/hikes');
+});
 module.exports = router;
