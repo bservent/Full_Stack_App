@@ -10,22 +10,26 @@
         <main>
           <form action="/hikes/<%= hike._id %>?_method=PUT" method="POST">
             <div style= "margin-top:20px;padding-right:37px">
+                <label for="name">Name:</label>
                 <input type="text" name="Name" value="<%= hike.Name %>"/><br/><br/>
             </div>
 
             <div style= "margin-top:20px;padding-right:37px">
+                <label for="location">Location:</label>
                 <input type="text" name="Location" value="<%= hike.Location %>"/><br/><br/>
             </div>
   
             <div style= "margin-top:20px;padding-right:37px">
-                <input type="text" name="LengthInMiles" value="<%= hike.LengthInMiles%>"/><br/><br/>
+                <label for="lengthInMiles">LengthInMiles</label>
+                <input type="text" name="LengthInMiles" value="<%= hike.LengthInMiles %>"/><br/><br/>
             </div>
 
             <div style= "margin-top:20px;padding-right:37px">
+                <label for="difficulty">Difficulty</label>
                 <input type="text" name="Difficulty" value="<%= hike.Difficulty %>"/><br/><br/>
             </div>
           <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
-            <input style="margin-top:20px;" type="submit" value="Delete Hike" />
+            <input style="margin-top:20px;" type="submit" value="Edit Hike" />
           </form>
         </main>
 </body>

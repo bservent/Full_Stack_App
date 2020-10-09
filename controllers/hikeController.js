@@ -50,13 +50,26 @@ router.get('/:hikeId/edit', (req, res) => {
     });
 });
 
+router.put('/:hikeId', (req, res) => {
+    db.Hike.findByIdAndUpdate(
+        req.params.hikeId,
+        req.body,
+        {new: true},
+        (err, updatedHike) => {
+            if (err) {
+                console.log(err);
+
+                res.redirect(`/hikes/${updatedHike._id}`); 
+            };
+        });
+});
+
 router.delete('/:hikeId', (req, res) => {
     db.Hike.findByIdAndDelete(req.params.hikeId, (err, deletedHike) => {
         if (err) {
             console.log(err);
         }
+        res.redirect('/hikes');
     });
-
-    res.redirect('/hikes');
 });
 module.exports = router;
