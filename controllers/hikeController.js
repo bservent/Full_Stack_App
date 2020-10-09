@@ -59,17 +59,20 @@ router.put('/:hikeId', (req, res) => {
             if (err) {
                 console.log(err);
 
-                res.redirect(`/hikes/${updatedHike._id}`); 
             };
+            res.redirect(`/hikes/${updatedHike._id}`); 
         });
 });
 
 router.delete('/:hikeId', (req, res) => {
-    db.Hike.findByIdAndDelete(req.params.hikeId, (err, deletedHike) => {
+    db.Hike.findByIdAndDelete(
+        req.params.hikeId, 
+        (err, deletedHike) => {
         if (err) {
             console.log(err);
         }
         res.redirect('/hikes');
     });
 });
+
 module.exports = router;
