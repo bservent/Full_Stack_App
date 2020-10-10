@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Hike</title>
 </head>
-<body>
+<body style="text-align: center;">
+<%- include('../nav') %>
     <h1>Edit Hike</h1>
         <main>
           <form action="/hikes/<%= hike._id %>?_method=PUT" method="POST">
@@ -14,12 +15,12 @@
                 <input type="text" name="Name" value="<%= hike.Name %>"/><br/><br/>
             </div>
 
-            <div style= "margin-top:20px;padding-right:37px">
+            <div style= "margin-top:20px;padding-right:43px">
                 <label for="location">Location:</label>
                 <input type="text" name="Location" value="<%= hike.Location %>"/><br/><br/>
             </div>
   
-            <div style= "margin-top:20px;padding-right:37px">
+            <div style= "margin-top:20px;padding-right:74px">
                 <label for="lengthInMiles">LengthInMiles:</label>
                 <input type="number" name="LengthInMiles" value="<%= hike.LengthInMiles %>"/><br/><br/>
             </div>

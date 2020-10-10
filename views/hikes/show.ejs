@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information</title>
 </head>
+<%- include('../nav') %>
 <body style = "text-align:center;color:rgb(133,22,41);">
-        <h1>Information</h1>
+        <h1>Hike Info</h1>
         <main>
-            <div style= "margin-top:20px;padding-right:37px">
-                Name:<p><%= hike.Name %></p>
+            <div style="display: flex; display: inline-flex; padding: 40px;">
+                Name:<h3><%= hike.Name %></h2>
             </div>
 
-            <div style= "margin-top:20px;padding-right:37px">
-                Location:<p><%= hike.Location %></p>
+            <div style="display: flex; display: inline-flex; padding: 40px;">
+                Location:<h3><%= hike.Location %></h3>
             </div>
   
-            <div style= "margin-top:20px;padding-right:37px">
-                LengthInMiles:<p><%= hike.LengthInMiles %> </p>
+            <div style="display: flex; display: inline-flex; padding: 40px;">
+                LengthInMiles:<h3><%= hike.LengthInMiles %> </h3>
             </div>
 
-            <div style= "margin-top:20px;padding-right:37px">
-                Name:<p><%= hike.Difficulty %> </p>
+            <div style="display: flex; display: inline-flex; padding: 40px;">
+                Difficulty:<h3><%= hike.Difficulty %> </h3>
             </div>
           <form action="/hikes/<%= hike._id %>?_method=DELETE" method="POST">
-            <input style="margin-top:20px;" type="submit" value="Delete Hike" />
+            <input type="submit" value="Delete Hike" />
           </form>
         </main>
 </body>
